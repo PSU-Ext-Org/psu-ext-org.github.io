@@ -1,0 +1,21 @@
+---
+import { links } from '../data/links';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate-200 bg-slate-50">
+  <div class="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <p class="font-semibold text-slate-900">PSU-EXT</p>
+      <p class="mt-1 text-sm text-slate-500">&copy; {year} MaxEELabs. All rights reserved.</p>
+    </div>
+
+    <ul class="flex flex-wrap gap-6 text-sm font-medium text-slate-600">
+      <li><a href={links.crowdSupply} class="hover:text-teal-700">Crowd Supply</a></li>
+      <li><a href={links.githubOrg} class="hover:text-teal-700">GitHub</a></li>
+      <li><a href={links.twitter} class="hover:text-teal-700">X / Twitter</a></li>
+      <li><a href={`mailto:${links.contactEmail}`} class="hover:text-teal-700">Contact</a></li>
+    </ul>
+  </div>
+</footer>

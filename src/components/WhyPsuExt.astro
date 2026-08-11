@@ -1,0 +1,74 @@
+---
+import { links } from '../data/links';
+
+const rows = [
+  {
+    label: 'Your existing PSU',
+    psu: 'Replaced with a new instrument',
+    psuExt: 'Kept — extended in place',
+  },
+  {
+    label: 'Openness',
+    psu: 'Closed firmware, fixed feature set',
+    psuExt: 'Open hardware, firmware, and software',
+  },
+  {
+    label: 'Network control',
+    psu: 'Often USB-only, or LAN-only',
+    psuExt: 'SCPI over both USB and Wi-Fi',
+  },
+  {
+    label: 'Automation',
+    psu: "Whatever the vendor's own software supports",
+    psuExt: 'Built-in scripting IDE and reusable dashboard widgets',
+  },
+  {
+    label: 'Instrument scope',
+    psu: 'Locked to that one instrument',
+    psuExt: 'Widgets adapt to other SCPI-capable gear too',
+  },
+];
+---
+
+<section id="why" class="mx-auto max-w-6xl px-6 py-20">
+  <h2 class="text-3xl font-bold tracking-tight text-slate-900">Why PSU-EXT?</h2>
+  <p class="mt-4 max-w-3xl text-lg leading-relaxed text-slate-600">
+    A programmable PSU solves remote control by replacing the instrument you already own.
+    PSU-EXT takes a different path: it adds the same capabilities to the PSU already on your
+    bench.
+  </p>
+
+  <div class="mt-10 overflow-x-auto rounded-xl ring-1 ring-slate-200">
+    <table class="w-full min-w-[640px] border-collapse text-left text-sm">
+      <thead>
+        <tr class="bg-slate-50 text-slate-500">
+          <th class="px-6 py-4 font-medium"><span class="sr-only">Aspect</span></th>
+          <th class="px-6 py-4 font-medium">A Programmable PSU</th>
+          <th class="px-6 py-4 font-semibold text-teal-700">PSU-EXT</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200 bg-white">
+        {
+          rows.map((r) => (
+            <tr>
+              <th scope="row" class="px-6 py-4 font-medium text-slate-900">
+                {r.label}
+              </th>
+              <td class="px-6 py-4 text-slate-600">{r.psu}</td>
+              <td class="px-6 py-4 font-medium text-slate-900">{r.psuExt}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-10 text-center">
+    <a
+      href={links.crowdSupply}
+      class="inline-block rounded-lg bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800"
+    >
+      Get Notified on Crowd Supply
+    </a>
+  </div>
+</section>

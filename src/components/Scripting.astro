@@ -1,0 +1,56 @@
+---
+const bullets = [
+  'Built-in browser IDE — write, run, and debug scripts without leaving the dashboard',
+  'Sandboxed execution — scripts get no filesystem, network, or host access',
+  'Query and control any configured SCPI device with query(), write(), and queryBinary()',
+  'Live progress, logs, and time-series measurements stream straight back into the IDE',
+  'Save, tag, and reuse scripts from a built-in script library',
+  'Built-in calibration and accuracy-measurement scripts, validated against reference instruments',
+];
+
+const snippet = `const voltage = query("PSU1", "MEAS:VOLT?");
+const current = query("PSU1", "MEAS:CURR?");
+
+record(new Date(), "voltage", "V", voltage);
+record(new Date(), "current", "A", current);
+
+log("INFO", "Measured " + voltage + " V, " + current + " A");
+progress(1.0);
+
+return { voltage, current };`;
+---
+
+<section id="automation" class="bg-slate-950 py-20 text-white">
+  <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-wide text-teal-300">03 &mdash; Automation</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight">Scripting IDE</h2>
+      <p class="mt-4 leading-relaxed text-slate-300">
+        Automate with JavaScript from a built-in browser IDE. Write a measurement or control
+        sequence, hit run, and a dedicated PC-side task runner executes it against real SCPI
+        devices &mdash; with live progress, logging, and time-series recording, not just
+        fire-and-forget commands.
+      </p>
+      <ul class="mt-6 space-y-3 text-sm leading-relaxed text-slate-300">
+        {
+          bullets.map((b) => (
+            <li class="flex gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
+              <span>{b}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="overflow-hidden rounded-xl border border-slate-800 bg-slate-900 shadow-xl">
+      <div class="flex items-center gap-1.5 border-b border-slate-800 px-4 py-3">
+        <span class="h-2.5 w-2.5 rounded-full bg-rose-500/70" />
+        <span class="h-2.5 w-2.5 rounded-full bg-amber-500/70" />
+        <span class="h-2.5 w-2.5 rounded-full bg-teal-500/70" />
+        <span class="ml-2 text-xs text-slate-400">read-voltage-current.js</span>
+      </div>
+      <pre class="overflow-x-auto p-5 text-sm leading-relaxed"><code class="font-mono text-slate-200">{snippet}</code></pre>
+    </div>
+  </div>
+</section>

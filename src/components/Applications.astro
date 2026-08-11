@@ -1,0 +1,90 @@
+---
+import { Image } from 'astro:assets';
+import multiInstrumentPhoto from '../assets/images/photos/psu-ext-bench-multi-instrument.jpg';
+import dashboardWidgets from '../assets/images/gui/dashboard-live-widgets.png';
+
+const personas = [
+  {
+    title: 'Hardware & Firmware Developers',
+    body: 'Show voltage, current, and power trends while a device boots, joins a network, writes flash, or enters sleep. Verify real power budgets and catch current spikes a front-panel meter would miss.',
+  },
+  {
+    title: 'Repair Engineers',
+    body: 'Use PSU-EXT as a controlled inline gate between the PSU and the device under test. Set over-voltage and over-current behavior, then switch the output on from the browser.',
+  },
+  {
+    title: 'Battery Testing',
+    body: 'Sit PSU-EXT between a battery and the load. Watch voltage, current, and power during discharge, and compare runtime across firmware modes as the battery voltage falls.',
+  },
+  {
+    title: 'Makers & Hobbyists',
+    body: 'Make voltage, current, and power visible in a browser dashboard for demos, livestreams, or project videos &mdash; without pointing a camera at a bench PSU display.',
+  },
+];
+---
+
+<section id="applications" class="mx-auto max-w-6xl px-6 py-20">
+  <h2 class="text-3xl font-bold tracking-tight text-slate-900">Applications</h2>
+  <p class="mt-4 max-w-3xl text-lg leading-relaxed text-slate-600">
+    Connect the supply to PSU-EXT, connect the load or device under test to the output, and
+    control or monitor the session from the browser interface.
+  </p>
+
+  <div class="mt-10 grid gap-6 sm:grid-cols-2">
+    <button
+      type="button"
+      data-lightbox={multiInstrumentPhoto.src}
+      data-lightbox-alt="PSU-EXT connected on a bench alongside multiple lab power supplies and an electronic load"
+      aria-label="View larger image"
+      class="group relative block cursor-zoom-in overflow-hidden rounded-xl shadow-md"
+    >
+      <Image
+        src={multiInstrumentPhoto}
+        alt="PSU-EXT connected on a bench alongside multiple lab power supplies and an electronic load"
+        width={700}
+        densities={[1, 2]}
+        class="h-full w-full object-cover transition group-hover:opacity-90"
+      />
+      <span class="pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-950/0 transition group-hover:bg-slate-950/10">
+        <span class="rounded-full bg-slate-950/70 p-2 text-white opacity-0 transition group-hover:opacity-100">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm10 17-5.5-5.5M9 11h4M11 9v4" />
+          </svg>
+        </span>
+      </span>
+    </button>
+    <button
+      type="button"
+      data-lightbox={dashboardWidgets.src}
+      data-lightbox-alt="PSU-EXT dashboard showing live CH1 output, voltage, and current widgets with a real-time current trend chart"
+      aria-label="View larger image"
+      class="group relative block cursor-zoom-in overflow-hidden rounded-xl shadow-md"
+    >
+      <Image
+        src={dashboardWidgets}
+        alt="PSU-EXT dashboard showing live CH1 output, voltage, and current widgets with a real-time current trend chart"
+        width={700}
+        densities={[1, 2]}
+        class="h-full w-full object-cover transition group-hover:opacity-90"
+      />
+      <span class="pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-950/0 transition group-hover:bg-slate-950/10">
+        <span class="rounded-full bg-slate-950/70 p-2 text-white opacity-0 transition group-hover:opacity-100">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm10 17-5.5-5.5M9 11h4M11 9v4" />
+          </svg>
+        </span>
+      </span>
+    </button>
+  </div>
+
+  <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      personas.map((p) => (
+        <div class="rounded-xl border border-slate-200 p-6">
+          <h3 class="font-semibold text-slate-900">{p.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600" set:html={p.body} />
+        </div>
+      ))
+    }
+  </div>
+</section>

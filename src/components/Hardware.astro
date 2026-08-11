@@ -1,0 +1,74 @@
+---
+import { links } from '../data/links';
+
+const board = [
+  'Operating range: 0-25 V and 0-2.5 A',
+  'Standard 3/4 in (19.05 mm) spacing for 4 mm banana receptacles',
+  'Relay-controlled output path for enable/disable',
+  'Isolated measurement and control architecture (ISO1540 + RFM-0505S)',
+  'ESP32-S3-N16R8 pre-certified MCU/wireless module',
+  'INA240A2 current-sense amp + ADS1115 ADC front-end',
+  'USB-C for control-side power/data, with data and power-path protection',
+  'Two external trigger inputs',
+];
+
+const firmware = [
+  'ESP-IDF firmware for ESP32-S3 with SCPI over USB CDC and raw TCP',
+  'Two-point voltage and current calibration support',
+  '100 sample/second circular buffers for voltage, current, and power history',
+  'Relay output control, OVP/OCP behavior, timer queues, and trigger actions',
+];
+---
+
+<section id="hardware" class="bg-slate-50 py-20">
+  <div class="mx-auto max-w-6xl px-6">
+    <p class="text-sm font-semibold uppercase tracking-wide text-teal-700">01 &mdash; Hardware</p>
+    <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900">The Board</h2>
+    <p class="mt-4 max-w-3xl text-lg leading-relaxed text-slate-600">
+      An inline unit that sits between the PSU and the load, with galvanic isolation between
+      the control side and the measurement/output domain, plus firmware that owns acquisition,
+      protection, and SCPI command handling on-device.
+    </p>
+
+    <div class="mt-10 grid gap-8 md:grid-cols-2">
+      <div class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+        <h3 class="font-semibold text-teal-700">Board</h3>
+        <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-600">
+          {
+            board.map((item) => (
+              <li class="flex gap-2">
+                <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-600" />
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+        <h3 class="font-semibold text-teal-700">Onboard Firmware</h3>
+        <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-600">
+          {
+            firmware.map((item) => (
+              <li class="flex gap-2">
+                <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-600" />
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <a
+        href={links.repos.firmware}
+        class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-teal-300 hover:text-teal-700"
+      >
+        View Full Specs &amp; SCPI Reference
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
