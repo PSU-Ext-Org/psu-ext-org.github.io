@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import multiInstrumentPhoto from '../assets/images/photos/psu-ext-bench-multi-instrument.jpg';
+import enclosurePhoto from '../assets/images/photos/psu-ext-enclosure-bench.jpg';
 import dashboardWidgets from '../assets/images/gui/dashboard-live-widgets.png';
 
 const personas = [
@@ -33,14 +33,14 @@ const personas = [
   <div class="mt-10 grid gap-6 sm:grid-cols-2">
     <button
       type="button"
-      data-lightbox={multiInstrumentPhoto.src}
-      data-lightbox-alt="PSU-EXT connected on a bench alongside multiple lab power supplies and an electronic load"
+      data-lightbox={enclosurePhoto.src}
+      data-lightbox-alt="PSU-EXT in its enclosure on a bench, wired to a bench PSU and connected via USB-C, with Wi-Fi and USB status indicators lit"
       aria-label="View larger image"
       class="group relative block cursor-zoom-in overflow-hidden rounded-xl shadow-md"
     >
       <Image
-        src={multiInstrumentPhoto}
-        alt="PSU-EXT connected on a bench alongside multiple lab power supplies and an electronic load"
+        src={enclosurePhoto}
+        alt="PSU-EXT in its enclosure on a bench, wired to a bench PSU and connected via USB-C, with Wi-Fi and USB status indicators lit"
         width={700}
         densities={[1, 2]}
         class="h-full w-full object-cover transition group-hover:opacity-90"

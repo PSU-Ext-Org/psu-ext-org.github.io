@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import topView from '../assets/images/renders/psu-ext-top-view.jpg';
+import pcbRender from '../assets/images/renders/psu-ext-pcb-top-view.jpg';
 import { links } from '../data/links';
 ---
 
@@ -58,14 +58,14 @@ import { links } from '../data/links';
     <div class="relative">
       <button
         type="button"
-        data-lightbox={topView.src}
-        data-lightbox-alt="PSU-EXT board render, top view, showing the ESP32-S3 module, banana jack terminals, and USB-C connector"
+        data-lightbox={pcbRender.src}
+        data-lightbox-alt="PSU-EXT board render, top view, Rev 1.2.0, showing the ESP32-S3 module, banana jack terminals, and USB-C connector"
         aria-label="View larger image"
         class="group relative block w-full cursor-zoom-in overflow-hidden rounded-2xl shadow-xl ring-1 ring-slate-900/10"
       >
         <Image
-          src={topView}
-          alt="PSU-EXT board render, top view, showing the ESP32-S3 module, banana jack terminals, and USB-C connector"
+          src={pcbRender}
+          alt="PSU-EXT board render, top view, Rev 1.2.0, showing the ESP32-S3 module, banana jack terminals, and USB-C connector"
           width={900}
           densities={[1, 2]}
           class="w-full transition group-hover:opacity-90"
