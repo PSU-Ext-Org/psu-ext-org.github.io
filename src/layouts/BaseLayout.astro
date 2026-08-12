@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Lightbox from '../components/Lightbox.astro';
+import CrowdSupplyDialog from '../components/CrowdSupplyDialog.astro';
 
 interface Props {
   title?: string;
@@ -39,6 +40,7 @@ const ogImageURL = new URL('/og-image.jpg', Astro.site);
   </head>
   <body class="font-sans antialiased">
     <slot />
+    <CrowdSupplyDialog />
     <Lightbox />
   </body>
 </html>
