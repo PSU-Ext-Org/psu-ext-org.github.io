@@ -12,6 +12,7 @@ export const links = {
   },
   demoVideo:
     'https://www.youtube.com/watch?v=-SMOoRix2fA&list=PL6ckvcoRaXGZk9XdToRmbwaO-lrsME2fA&index=6',
+  teaserVideo: 'https://www.youtube.com/watch?v=VDnC6QVCsYI',
   twitter: 'https://x.com/MaxEELabs',
   linkedin: 'https://www.linkedin.com/in/pavlov-web/',
   reddit: 'https://reddit.com/user/Negative-Plantain443',

@@ -1,6 +1,4 @@
 ---
-import { links } from '../data/links';
-
 const rows = [
   {
     label: 'Your existing PSU',
@@ -64,11 +62,12 @@ const rows = [
   </div>
 
   <div class="mt-10 text-center">
-    <a
-      href={links.crowdSupply}
+    <button
+      type="button"
+      data-crowd-supply-dialog
       class="inline-block rounded-lg bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800"
     >
-      Get Notified on Crowd Supply
-    </a>
+      Coming Soon to Crowd Supply
+    </button>
   </div>
 </section>
