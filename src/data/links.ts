@@ -1,6 +1,6 @@
 // Central place for links that aren't finalized yet.
-// TODO: update these once the Crowd Supply campaign URL is live and the
-// repos are public under the GitHub org.
+// TODO: update crowdSupply once the Crowd Supply campaign URL is live.
+// The repos below are already public under the GitHub org.
 export const links = {
   crowdSupply: 'https://www.crowdsupply.com/maxeelabs/psu-ext',
   githubOrg: 'https://github.com/PSU-Ext-Org',
