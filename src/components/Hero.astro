@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import pcbRender from '../assets/images/renders/psu-ext-pcb-top-view.jpg';
 import { links } from '../data/links';
+import CrowdSupplyButton from './CrowdSupplyButton.astro';
 ---
 
 <section id="top" class="overflow-hidden bg-gradient-to-b from-teal-50 via-lime-50/40 to-white">
@@ -19,13 +20,7 @@ import { links } from '../data/links';
         bench power supply &mdash; no replacement instrument required.
       </p>
       <div class="mt-8 flex flex-wrap gap-4">
-        <button
-          type="button"
-          data-crowd-supply-dialog
-          class="rounded-lg bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800"
-        >
-          Coming Soon to Crowd Supply
-        </button>
+        <CrowdSupplyButton />
         <a
           href={links.githubOrg}
           class="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-teal-300 hover:text-teal-700"

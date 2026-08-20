@@ -1,0 +1,28 @@
+---
+import { links } from '../data/links';
+
+interface Props {
+  variant?: 'primary' | 'nav' | 'mobileNav' | 'inverted';
+}
+
+const { variant = 'primary' } = Astro.props;
+
+const variantClasses = {
+  primary: 'inline-block bg-teal-700 px-6 py-3 text-white hover:bg-teal-800',
+  nav: 'hidden bg-teal-700 px-4 py-2 text-white hover:bg-teal-800 sm:inline-block',
+  mobileNav: 'block w-full bg-teal-700 px-4 py-2 text-center text-white hover:bg-teal-800',
+  inverted: 'inline-block bg-white px-6 py-3 text-teal-700 hover:bg-teal-50',
+};
+---
+
+<a
+  href={links.crowdSupply}
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={[
+    'rounded-lg text-sm font-semibold shadow-sm transition',
+    variantClasses[variant],
+  ]}
+>
+  Follow on Crowd Supply
+</a>

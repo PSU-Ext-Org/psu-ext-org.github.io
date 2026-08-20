@@ -1,4 +1,6 @@
 ---
+import CrowdSupplyButton from './CrowdSupplyButton.astro';
+
 const rows = [
   {
     label: 'Your existing PSU',
@@ -62,12 +64,6 @@ const rows = [
   </div>
 
   <div class="mt-10 text-center">
-    <button
-      type="button"
-      data-crowd-supply-dialog
-      class="inline-block rounded-lg bg-teal-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800"
-    >
-      Coming Soon to Crowd Supply
-    </button>
+    <CrowdSupplyButton />
   </div>
 </section>

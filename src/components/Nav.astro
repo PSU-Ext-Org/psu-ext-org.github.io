@@ -1,4 +1,6 @@
 ---
+import CrowdSupplyButton from './CrowdSupplyButton.astro';
+
 const navLinks = [
   { href: '#why', label: 'Why PSU-EXT' },
   { href: '#applications', label: 'Applications' },
@@ -25,13 +27,7 @@ const navLinks = [
     </ul>
 
     <div class="flex items-center gap-2">
-      <button
-        type="button"
-        data-crowd-supply-dialog
-        class="hidden rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800 sm:inline-block"
-      >
-        Coming Soon to Crowd Supply
-      </button>
+      <CrowdSupplyButton variant="nav" />
 
       <button
         id="nav-toggle"
@@ -59,13 +55,7 @@ const navLinks = [
         </li>
       ))}
       <li class="pt-2">
-        <button
-          type="button"
-          data-crowd-supply-dialog
-          class="block w-full rounded-lg bg-teal-700 px-4 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-teal-800"
-        >
-          Coming Soon to Crowd Supply
-        </button>
+        <CrowdSupplyButton variant="mobileNav" />
       </li>
     </ul>
   </div>
@@ -85,7 +75,7 @@ const navLinks = [
     toggle.setAttribute('aria-expanded', String(!isOpen));
   });
 
-  menu?.querySelectorAll('a, [data-crowd-supply-dialog]').forEach((item) =>
+  menu?.querySelectorAll('a').forEach((item) =>
     item.addEventListener('click', () => {
       menu.classList.add('hidden');
       iconOpen?.classList.remove('hidden');
