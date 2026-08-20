@@ -1,17 +1,17 @@
+---
+import CrowdSupplyButton from './CrowdSupplyButton.astro';
+---
+
 <section class="bg-teal-700 py-12 text-white">
   <div class="mx-auto max-w-3xl px-6 text-center">
     <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">
       Keep the PSU You Already Own &mdash; Add the Rest
     </h2>
     <p class="mt-3 text-teal-50">
-      Our Crowd Supply pre-launch campaign page is coming soon.
+      Follow PSU-EXT on Crowd Supply to receive campaign updates and be notified when we launch.
     </p>
-    <button
-      type="button"
-      data-crowd-supply-dialog
-      class="mt-6 inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-teal-700 shadow-sm transition hover:bg-teal-50"
-    >
-      Coming Soon to Crowd Supply
-    </button>
+    <div class="mt-6">
+      <CrowdSupplyButton variant="inverted" />
+    </div>
   </div>
 </section>
