@@ -40,20 +40,6 @@ import CrowdSupplyButton from './CrowdSupplyButton.astro';
         <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current"><path d="M8 5v14l11-7Z" /></svg>
         Working EVT-stage prototype &mdash; watch it in action
       </a>
-      <dl class="mt-8 grid grid-cols-3 gap-6 border-t border-slate-200 pt-6 text-sm">
-        <div>
-          <dt class="text-slate-500">Measures</dt>
-          <dd class="font-semibold text-slate-900">0&ndash;25 V / 0&ndash;2.5 A</dd>
-        </div>
-        <div>
-          <dt class="text-slate-500">Control</dt>
-          <dd class="font-semibold text-slate-900">SCPI over USB &amp; TCP</dd>
-        </div>
-        <div>
-          <dt class="text-slate-500">Footprint</dt>
-          <dd class="font-semibold text-slate-900">100 &times; 50 mm</dd>
-        </div>
-      </dl>
     </div>
 
     <div class="relative">
@@ -80,5 +66,26 @@ import CrowdSupplyButton from './CrowdSupplyButton.astro';
         </span>
       </button>
     </div>
+    <dl class="grid grid-cols-2 gap-4 border-t border-slate-200 pt-6 text-sm md:col-span-2 md:grid-cols-4">
+      <div>
+        <dt class="text-slate-500">Measures</dt>
+        <dd class="font-semibold text-slate-900">0&ndash;25 V / 0&ndash;2.5 A</dd>
+      </div>
+      <div>
+        <dt class="text-slate-500">Current resolution*</dt>
+        <dd class="font-semibold text-slate-900">0.0001 A</dd>
+      </div>
+      <div>
+        <dt class="text-slate-500">Control</dt>
+        <dd class="font-semibold text-slate-900">SCPI over USB &amp; TCP</dd>
+      </div>
+      <div>
+        <dt class="text-slate-500">PCB Footprint</dt>
+        <dd class="font-semibold text-slate-900">100 &times; 50 mm</dd>
+      </div>
+    </dl>
+    <p class="-mt-8 text-sm text-slate-500 md:col-span-2">
+      * Under lab conditions with a 0.256 V PGA setting and 64 SPS rate.
+    </p>
   </div>
 </section>

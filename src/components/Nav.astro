@@ -2,7 +2,8 @@
 import CrowdSupplyButton from './CrowdSupplyButton.astro';
 
 const navLinks = [
-  { href: '#why', label: 'Why PSU-EXT' },
+  { href: '#whats-new', label: "What's new?" },
+  { href: '#why', label: 'Support PSU-EXT' },
   { href: '#applications', label: 'Applications' },
   { href: '#hardware', label: 'Hardware' },
   { href: '#measurement', label: 'Software' },
@@ -13,7 +14,7 @@ const navLinks = [
 
 <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
   <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-    <a href="#top" class="flex items-center gap-2 font-semibold text-slate-900">
+    <a href="#top" class="flex shrink-0 items-center gap-2 whitespace-nowrap font-semibold text-slate-900">
       <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-teal-700">
         <svg viewBox="0 0 24 24" class="h-4 w-4 fill-lime-300">
           <path d="M13 2 5 14h5l-1 8 9-13h-6l1-7Z" />
@@ -22,11 +23,11 @@ const navLinks = [
       PSU-EXT
     </a>
 
-    <ul class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-      {navLinks.map((l) => <li><a href={l.href} class="hover:text-teal-700">{l.label}</a></li>)}
+    <ul class="hidden items-center gap-4 whitespace-nowrap text-sm font-medium text-slate-600 lg:flex">
+      {navLinks.map((l) => <li class:list={{ 'hidden xl:list-item': l.href === '#open-source' }}><a href={l.href} class="hover:text-teal-700">{l.label}</a></li>)}
     </ul>
 
-    <div class="flex items-center gap-2">
+    <div class="flex shrink-0 items-center gap-2 whitespace-nowrap">
       <CrowdSupplyButton variant="nav" />
 
       <button
@@ -35,7 +36,7 @@ const navLinks = [
         aria-label="Toggle menu"
         aria-expanded="false"
         aria-controls="nav-mobile-menu"
-        class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-700 md:hidden"
+        class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-700 lg:hidden"
       >
         <svg id="nav-icon-open" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -47,7 +48,7 @@ const navLinks = [
     </div>
   </nav>
 
-  <div id="nav-mobile-menu" class="hidden border-t border-slate-200 bg-white md:hidden">
+  <div id="nav-mobile-menu" class="hidden border-t border-slate-200 bg-white lg:hidden">
     <ul class="flex flex-col px-6 py-4 text-sm font-medium text-slate-600">
       {navLinks.map((l) => (
         <li>
