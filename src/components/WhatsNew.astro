@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  title: string;
+  media:
+    | { kind: 'youtube'; videoId: string; title: string }
+    | { kind: 'image'; src: ImageMetadata; alt: string };
+  href: string;
+  linkLabel: string;
+}
+
+const { title, media, href, linkLabel } = Astro.props;
+---
+
+<section id="whats-new" aria-labelledby="whats-new-heading" class="mx-auto max-w-6xl px-6 py-14">
+  <h2 id="whats-new-heading" class="text-3xl font-bold tracking-tight text-slate-900">What's new?</h2>
+  <div class="mt-8 grid items-start gap-8 md:grid-cols-2 lg:gap-12">
+    <div class="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-200">
+      {media.kind === 'youtube' ? (
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${media.videoId}`}
+          title={media.title}
+          loading="lazy"
+          allow="clipboard-write; encrypted-media; picture-in-picture; fullscreen"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"
+          class="aspect-video w-full border-0"
+        />
+      ) : (
+        <Image src={media.src} alt={media.alt} width={900} densities={[1, 2]} loading="lazy" class="h-auto w-full" />
+      )}
+    </div>
+    <div>
+      <h3 class="text-2xl font-bold tracking-tight text-slate-900">{title}</h3>
+      <div class="mt-4 space-y-4 leading-relaxed text-slate-600">
+        <slot />
+      </div>
+      <a href={href} class="mt-6 inline-flex items-center gap-2 font-semibold text-teal-700 hover:text-teal-800">
+        {linkLabel}
+        <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

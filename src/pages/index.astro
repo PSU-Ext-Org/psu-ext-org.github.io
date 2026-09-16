@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
+import WhatsNew from '../components/WhatsNew.astro';
 import WhyPsuExt from '../components/WhyPsuExt.astro';
 import Applications from '../components/Applications.astro';
 import Hardware from '../components/Hardware.astro';
@@ -16,6 +17,25 @@ import Footer from '../components/Footer.astro';
   <Nav />
   <main>
     <Hero />
+    <WhatsNew
+      title="DC Current Accuracy Spec Update"
+      media={{ kind: 'youtube', videoId: 'cXx_XG23uHY', title: 'PSU-EXT calibrated current readings compared with a RIGOL DM858E' }}
+      href="https://www.youtube.com/watch?v=cXx_XG23uHY"
+      linkLabel="Watch the Measurement Demo on YouTube"
+    >
+      <p>Our current-accuracy specification had been TBD. Not anymore.</p>
+      <p>
+        After calibration, we compared PSU-EXT current readings with a RIGOL DM858E
+        bench multimeter, and the results are exciting!
+      </p>
+      <p>
+        PSU-EXT measures current with 0.0001 A resolution. Our measured prototype accuracy is:
+      </p>
+      <ul class="list-disc space-y-2 pl-5">
+        <li>±(0.5% of reading + 0.5 mA) from 20 mA to 500 mA</li>
+        <li>±(1.5% of reading + 0.2 mA) from 1 mA to below 20 mA</li>
+      </ul>
+    </WhatsNew>
     <WhyPsuExt />
     <Applications />
     <Hardware />
